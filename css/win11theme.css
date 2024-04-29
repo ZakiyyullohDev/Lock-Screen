@@ -1,0 +1,209 @@
+@font-face {
+    font-family: numberFont;
+    src: url(/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: globalFont;
+    src: url(/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: UserFont;
+    src: url(/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 96vh;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: globalFont;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/img/bg4.jpg');
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1056px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blurredImg {
+    height: 96vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('/img/bg4blurred.jpg');
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.time {
+    font-size: 120px;
+    padding-top: 100px;
+    text-align: center;
+    letter-spacing: 5px;
+    filter: opacity(85%);
+    font-family: numberFont;
+}
+
+.today-date {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    filter: opacity(85%);
+    font-family: numberFont;
+}
+
+#lockSreenBtn {
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 22px;
+    /* line-height: 16px; */
+    background: #222;
+    border: 3px solid grey;
+    transition: all 0.3s ease-in-out;
+}
+
+#lockSreenBtn:hover {
+    cursor: pointer;
+    filter: opacity(100%);
+}
+
+#lockSreenBtn:active  {
+    transform: scale(0.9);
+}
+
+.display-none {
+    display: none;
+}
+
+.blurScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    background-size: cover; 
+    background-image: url('/img/bg4.jpg'); 
+}
+
+.userInfo {
+    display: none;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.userImg {
+    user-select: none;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 5px solid grey;
+}
+
+.userName {
+    margin-bottom: 10px;
+}
+
+.unlockScreen {
+    display: none;
+    width: 222px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+}
+
+.passwor-input {
+    color: #fff;
+    padding: 5px 10px;
+    border: 3px solid grey;
+    background-color: #222;
+    transition: all 0.3s ease-in-out;
+}
+
+.passwor-input::placeholder {
+    color: grey;
+}
+
+.passwor-input:hover {
+    color: #000;
+    background: #fff;
+    border: 3px solid #fff;
+}
+.passwor-input:focus {
+    color: grey;
+    background: #fff;
+}
+
+#unlockScreenBtn {
+    color: #fff;
+    padding: 5px 10px;
+    background: #222;
+    line-height: 16px;
+    border: 3px solid grey;
+    transition: all 0.3s ease-in-out;
+}
+
+#unlockScreenBtn:hover {
+    color: #000;
+    background-color: #fff;
+    border: 3px solid #fff;
+}
+
+.error {
+    color: #fff;
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: center;
+}
