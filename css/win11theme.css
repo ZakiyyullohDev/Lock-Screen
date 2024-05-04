@@ -100,7 +100,7 @@ img {
     font-family: numberFont;
 }
 
-#lockSreenBtn {
+#lockScreenBtn {
     color: #fff;
     padding: 5px 10px;
     position: fixed;
@@ -113,12 +113,12 @@ img {
     transition: all 0.3s ease-in-out;
 }
 
-#lockSreenBtn:hover {
+#lockScreenBtn:hover {
     cursor: pointer;
     background-color: rgb(72, 72, 72);
 }
 
-#lockSreenBtn:active  {
+#lockScreenBtn:active  {
     transform: scale(0.9);
 }
 
@@ -253,9 +253,16 @@ img {
     justify-content: space-between;
 }
 
-.secret-password-text {
-    left: 10px;
-    bottom: 10px;
+/* .secret-password-text {
+} */
+
+.passwordWrapper {
+    left: 30px;
+    bottom: 30px;
+    width: 100px;
+    display: none;
+    display: flex;
     position: fixed;
-    font-size: 15px;
+    align-items: center;
+    justify-content: space-between;
 }

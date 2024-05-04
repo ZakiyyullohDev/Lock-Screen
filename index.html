@@ -13,7 +13,7 @@
         <div id="timeWrapper" class="date">
             <h1 class="time" id="time">12:00</h1>
             <p class="today-date" id="todayDate">2024 Year, 29 April Monday</p>
-            <button id="lockSreenBtn">Lock Screen</button>
+            <button id="lockScreenBtn">Lock Screen</button>
         </div>
 
         <div id="userWrapper">
@@ -47,17 +47,32 @@
         </div>
     </div>
 
-    <p class="secret-password-text">Password: 1571515z</p>
-
+    <div class="passwordWrapper" id="passwordWrapper">
+        <p class="secret-password-text" id="secretPasswordText" onmouseover="showPasswordEditBtn()" onmouseleave="hidePasswordEditBtn()">1571515z</p>
+        <button class="editBtn" id="passwordEditBtn">
+            <!-- <img class="editNameImg" src="img/edit-user-name.svg" alt="editName" width="30" height="30"> -->
+        </button>
+    </div>
 
     <script type="module" src="js/app.js"></script>
     <script>
         const showEditBtn = () => {
             editBtn.style.display = 'block'
+            // passwordEditBtn.style.display = 'block'
         }
 
         const hideEditBtn = () => {
-            editBtn.style.display = 'none';
+            editBtn.style.display = 'none'
+            // passwordEditBtn.style.display = 'none'
+        }
+        const showPasswordEditBtn = () => {
+            // editBtn.style.display = 'block'
+            passwordEditBtn.style.display = 'block'
+        }
+
+        const hidePasswordEditBtn = () => {
+            // editBtn.style.display = 'none'
+            passwordEditBtn.style.display = 'none'
         }
     </script>
 </body>

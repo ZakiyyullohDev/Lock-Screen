@@ -1,11 +1,14 @@
-const bgImagesblurred = ['/img/bg1blurred.jpg','/img/bg2blurred.jpg','/img/bg3blurred.jpg','/img/bg4blurred.jpg']
+const bgImagesBlurred = ['/img/bg1blurred.jpg','/img/bg2blurred.jpg','/img/bg3blurred.jpg','/img/bg4blurred.jpg']
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const bgImages = ['/img/bg1.jpg', '/img/bg2.jpg','/img/bg3.jpg','/img/bg4.jpg'];
+const secretPasswordText = document.getElementById('secretPasswordText');
 const unlockScreenBtn = document.getElementById('unlockScreenBtn');
+const passwordWrapper = document.getElementById('passwordWrapper');
 const welcomeWrapper = document.getElementById('welcomeWrapper');
+const randomIndex = Math.floor(Math.random() * bgImages.length);
 const passwordInput = document.getElementById('passwordInput');
 const inputsWrapper = document.getElementById('inputsWrapper');
-const lockScreenBtn = document.getElementById('lockSreenBtn');
+const lockScreenBtn = document.getElementById('lockScreenBtn');
 const unlockScreen = document.getElementById('unlockScreen');
 const userWrapper = document.getElementById('userWrapper');
 const timeWrapper = document.getElementById('timeWrapper');
@@ -21,8 +24,8 @@ let userPasswordArray = []
 let userNameArray = []
 let date = new Date();
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    const randomIndex = Math.floor(Math.random() * bgImages.length);
+window.addEventListener('DOMContentLoaded', () => {
+    // const randomIndex = Math.floor(Math.random() * bgImages.length);
     
     document.body.style.backgroundImage = `url('${bgImages[randomIndex]}')`;
 });
@@ -32,23 +35,36 @@ const getNameFromStorage = () => {
     userName.textContent = localStorage.getItem('UserName:')
 }
 
+const getPasswordFromStorage = () => {
+    // localStorage.getItem('Password:')
+    secretPasswordText.textContent = localStorage.getItem('Password:')
+}
+
 getNameFromStorage()
 
 const setNameToStorage = ()=> {
     localStorage.setItem('UserName:', userNameArray)
 }
 
+const setPasswordToStorage = ()=> {
+    localStorage.setItem('Password:', userPasswordArray)
+}
+
 unlockScreenBtn.addEventListener('click', ()=> {
-    if (passwordInput.value == '1571515z') {
-        welcomeWrapper.style.display = 'flex';
+    if (passwordInput.value == `${localStorage.getItem('Password:')}`) {
         inputsWrapper.style.display = 'none';
+        welcomeWrapper.style.display = 'flex';
+        passwordWrapper.style.display = 'none';
+        
         passwordInput.value = ''
         
         setTimeout(() => {
-            timeWrapper.style.display = 'flex';
             userInfo.style.display = 'none';
+            timeWrapper.style.display = 'flex';
             unlockScreen.style.display = 'none';
             welcomeWrapper.style.display = 'none';
+            secretPasswordText.style.display = 'none';
+            document.body.style.backgroundImage = `url('${bgImages[randomIndex]}')`;
         }, 3000);
         return ''
     } else {
@@ -65,10 +81,13 @@ unlockScreenBtn.addEventListener('click', ()=> {
 })
 
 lockScreenBtn.addEventListener('click', () => {
-    timeWrapper.style.display = 'none';
     userInfo.style.display = 'flex';
+    timeWrapper.style.display = 'none';
     unlockScreen.style.display = 'flex';
     inputsWrapper.style.display = 'flex'
+    passwordWrapper.style.display = 'flex';
+    
+    body.style.backgroundImage = `url('${bgImagesBlurred[randomIndex]}')`
 });
 
 setInterval(() => {
@@ -85,16 +104,18 @@ setInterval(() => {
 passwordInput.addEventListener('keydown', (e)=> {
     if (e.keyCode === 13) {
         
-        if (passwordInput.value == '1571515z') {
+        if (passwordInput.value == `${localStorage.getItem('Password:')}`) {
             welcomeWrapper.style.display = 'flex';
             inputsWrapper.style.display = 'none';
             passwordInput.value = ''
             
             setTimeout(() => {
-                timeWrapper.style.display = 'flex';
                 userInfo.style.display = 'none';
+                timeWrapper.style.display = 'flex';
                 unlockScreen.style.display = 'none';
                 welcomeWrapper.style.display = 'none';
+                secretPasswordText.style.display = 'none';
+                document.body.style.backgroundImage = `url('${bgImages[randomIndex]}')`;
             }, 3000);
         } 
     }
@@ -115,4 +136,19 @@ const editUserName = () => {
     })
 };
 
+const editPassword = () => {
+    secretPasswordText.addEventListener('click', () => {
+        secretPasswordText.setAttribute('contenteditable', 'true');
+    });
+    secretPasswordText.addEventListener('keydown', (e)=> {
+        if (e.keyCode === 13) {
+            secretPasswordText.setAttribute('contenteditable', 'false');
+            userPasswordArray.push(secretPasswordText.textContent)
+            console.log(userPasswordArray)
+            setPasswordToStorage()
+        }
+    })
+};
+
 editUserName()
+editPassword()
