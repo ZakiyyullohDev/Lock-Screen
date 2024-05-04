@@ -37,11 +37,11 @@ body {
     color: #fff;
     font-size: 16px;
     line-height: 1.5;
-    font-family: globalFont;
     background-size: cover;
+    font-family: globalFont;
+    transition: all 0.3s linear;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/img/bg4.jpg');
 }
 
 img {
@@ -68,13 +68,13 @@ img {
     margin-right: auto;
 }
 
-.blurredImg {
+/* .blurredImg {
     height: 96vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url('/img/bg4blurred.jpg');
-}
+} */
 
 .date {
     display: flex;
@@ -103,6 +103,9 @@ img {
 #lockSreenBtn {
     color: #fff;
     padding: 5px 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
     font-size: 22px;
     /* line-height: 16px; */
     background: #222;
@@ -112,7 +115,7 @@ img {
 
 #lockSreenBtn:hover {
     cursor: pointer;
-    filter: opacity(100%);
+    background-color: rgb(72, 72, 72);
 }
 
 #lockSreenBtn:active  {
@@ -144,24 +147,31 @@ img {
 }
 
 .userImg {
+    width: 170px;
+    height: 170px;
     user-select: none;
     border-radius: 50%;
     margin-bottom: 10px;
+    background-size: contain;
     border: 5px solid grey;
+    background-repeat: no-repeat;
+    background-image: url(/img/User.png);
 }
 
 .userName {
+    margin-right: 10px;
     margin-bottom: 10px;
 }
 
 .unlockScreen {
     display: none;
-    width: 222px;
+    /* width: 222px; */
+    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     justify-content: center;
-    background-color: grey;
+    /* background-color: grey; */
 }
 
 .passwor-input {
@@ -206,4 +216,45 @@ img {
     font-size: 20px;
     padding-top: 10px;
     text-align: center;
+}
+
+.inputs-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.welcome-wrapper {
+    display: none;
+    /* margin-top: 200px; */
+    align-items: center;
+    /* margin-bottom: auto; */
+    justify-content: center;
+}
+
+.welcome-text {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.editBtn {
+    border: 0;
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: transparent;
+    background-image: url(/img/edit-user-name.svg);
+}
+
+.userNameWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.secret-password-text {
+    left: 10px;
+    bottom: 10px;
+    position: fixed;
 }

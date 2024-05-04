@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="domTitle">Lock Screen</title>
+    <link rel="icon" href="img/win11icon.png">
     <link rel="stylesheet" href="css/win11theme.css">
 </head>
 <body>
@@ -14,20 +15,50 @@
             <p class="today-date" id="todayDate">2024 Year, 29 April Monday</p>
             <button id="lockSreenBtn">Lock Screen</button>
         </div>
+
         <div id="userWrapper">
+
             <div class="userInfo" id="userInfo">
-                <img id="userImg" class="userImg" src="img/user.png" alt="User" width="170" height="170">
-                <h1 id="userName" class="userName">ZakiyDev</h1>
+                <section class="userImg"></section>
+
+                <div class="userNameWrapper">
+                    <h1 id="userName" class="userName" onmouseover="showEditBtn()" onmouseleave="hideEditBtn()">ZakiyDev</h1>
+                    <button class="editBtn" id="editBtn">
+                        <!-- <img class="editNameImg" src="img/edit-user-name.svg" alt="editName" width="30" height="30"> -->
+                    </button>
+                </div>
+
             </div>
+
             <div class="unlockScreen" id="unlockScreen">
-                <input class="passwor-input" id="passwordInput" type="text" placeholder="Password:">
-                <button id="unlockScreenBtn">></button>
+
+                <div id="inputsWrapper" class="inputs-wrapper">
+                    <input class="passwor-input" id="passwordInput" type="text" placeholder="Password:">
+                    <button id="unlockScreenBtn">></button>
+                </div>
+
             </div>
+
+            <div id="welcomeWrapper" class="welcome-wrapper">
+                <p class="welcome-text" id="welText">Welcome</p>
+                <img src="img/windows-loading-.gif" alt="loading" width="40" height="40">
+            </div>
+
         </div>
     </div>
-    
-    <!-- <div class="display-none" id="blurrer"></div> -->
-    
-    <script src="js/app.js"></script>    
+
+    <p class="secret-password-text">Password: 1571515z</p>
+
+
+    <script type="module" src="js/app.js"></script>
+    <script>
+        const showEditBtn = () => {
+            editBtn.style.display = 'block'
+        }
+
+        const hideEditBtn = () => {
+            editBtn.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
