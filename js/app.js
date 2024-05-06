@@ -24,6 +24,12 @@ let userPasswordArray = []
 let userNameArray = []
 let date = new Date()
 
+const test = ()=> {
+    localStorage.setItem('UserName:', 'ZakiyDev')
+    localStorage.setItem('Password:', '1571515z')
+}
+test()
+
 window.addEventListener('DOMContentLoaded', () => {
     // const randomIndex = Math.floor(Math.random() * bgImages.length)
     
