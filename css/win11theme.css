@@ -33,7 +33,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    height: 96vh;
+    height: 100vh;
     color: #fff;
     font-size: 16px;
     line-height: 1.5;
@@ -261,7 +261,7 @@ img {
     bottom: 30px;
     width: 100px;
     display: none;
-    display: flex;
+    /* display: flex; */
     position: fixed;
     align-items: center;
     justify-content: space-between;
