@@ -24,6 +24,20 @@ let userPasswordArray = []
 let userNameArray = []
 let date = new Date()
 
+// const apiKey =  '913dfb1df5fd26ad1747ebdad2f4c841'
+
+// async function fetchWeather() {
+//     try {
+//         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${'Taskent'}&appid=${apiKey}`)
+//         const data = await response.json()
+//         console.log(data);
+//     } catch (error) {
+//         console.error(error)
+//     }
+// }
+//
+// fetchWeather()
+
 const test = ()=> {
     localStorage.setItem('UserName:', 'ZakiyDev')
     localStorage.setItem('Password:', '1571515z')
@@ -31,18 +45,14 @@ const test = ()=> {
 test()
 
 window.addEventListener('DOMContentLoaded', () => {
-    // const randomIndex = Math.floor(Math.random() * bgImages.length)
-    
     document.body.style.backgroundImage = `url('${bgImages[randomIndex]}')`
 })
 
 const getNameFromStorage = () => {
-    // localStorage.getItem('UserName:')
     userName.textContent = localStorage.getItem('UserName:')
 }
 
 const getPasswordFromStorage = () => {
-    // console.log(localStorage.getItem('Password:'))
     secretPasswordText.textContent = localStorage.getItem('Password:')
 }
 
