@@ -253,16 +253,17 @@ img {
     justify-content: space-between;
 }
 
-/* .secret-password-text {
-} */
+.secret-password-text {
+    margin-right: 20px;
+}
 
 .passwordWrapper {
     left: 30px;
     bottom: 30px;
-    width: 100px;
+    width: 200px;
     display: none;
     /* display: flex; */
     position: fixed;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
