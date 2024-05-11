@@ -156,7 +156,7 @@ img {
     background-size: contain;
     border: 5px solid grey;
     background-repeat: no-repeat;
-    background-image: url(/img/User.png);
+    background-image: url(/img/User.png); 
 }
 
 .userName {
@@ -267,4 +267,50 @@ img {
     position: fixed;
     align-items: center;
     /* justify-content: space-between; */
+}
+
+.weatherInfoWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.weatherInfo {
+    top: 10px;
+    /* left: ; */
+    display: flex;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.weather-info-title {
+    font-size: 30px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.city-name {
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.city-temp {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+.wind-speed {
+    font-size: 20px;
+    margin-right: 100px;
+    margin-right: 10px;
+}
+
+.humidity {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.cloud-info {
+    font-size: 20px;
 }

@@ -23,9 +23,7 @@
 
                 <div class="userNameWrapper">
                     <h1 id="userName" class="userName" onmouseover="showEditBtn()" onmouseleave="hideEditBtn()">ZakiyDev</h1>
-                    <button class="editBtn" id="editBtn">
-                        <!-- <img class="editNameImg" src="img/edit-user-name.svg" alt="editName" width="30" height="30"> -->
-                    </button>
+                    <button class="editBtn" id="editBtn"></button>
                 </div>
 
             </div>
@@ -49,9 +47,21 @@
 
     <div class="passwordWrapper" id="passwordWrapper">
         <p class="secret-password-text" id="secretPasswordText" onmouseover="showPasswordEditBtn()" onmouseleave="hidePasswordEditBtn()">1571515z</p>
-        <button class="editBtn" id="passwordEditBtn">
-            <!-- <img class="editNameImg" src="img/edit-user-name.svg" alt="editName" width="30" height="30"> -->
-        </button>
+        <button class="editBtn" id="passwordEditBtn"></button>
+    </div>
+
+    <div class="weatherInfoWrapper" id="weatherInfoWrapper">
+        <div class="weatherInfo" id="weatherInfo">
+            <h1 class="weather-info-title">Weather Information</h1>
+            <p class="city-name" id="cityName">Kokand</p>
+            <p class="city-temp" id="cityTemp">35°C</p>
+        
+            <!-- <div class="wind-speed-and-humidity-wrapper"> -->
+                <p class="wind-speed" id="windSpeed">Wind 11 km/h</p>
+                <p class="humidity" id="humidity">Humidity 13%</p>
+            <!-- </div> -->
+            <p class="cloud-info" id="cloudInfo">Clear</p>
+        </div>
     </div>
 
     <script type="module" src="js/app.js"></script>
@@ -75,5 +85,6 @@
             passwordEditBtn.style.display = 'none'
         }
     </script>
+    <!-- https://classic.minecraft.net/?join=lRyrkOSCMBuQHX2a -->
 </body>
 </html>
