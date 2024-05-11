@@ -56,10 +56,16 @@ async function fetchWeather() {
 fetchWeather()
 
 const test = ()=> {
+    if (localStorage.getItem('UserName:') && localStorage.getItem('Password:')) {
+        userName.textContent = localStorage.getItem('UserName:')
+        secretPasswordText.textContent = localStorage.getItem('Password:')
+        return ''
+    }
     localStorage.setItem('UserName:', 'ZakiyDev')
     localStorage.setItem('Password:', '1571515z')
 }
 test()
+
 
 window.addEventListener('DOMContentLoaded', () => {
     document.body.style.backgroundImage = `url('${bgImages[randomIndex]}')`

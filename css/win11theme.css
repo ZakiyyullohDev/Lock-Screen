@@ -234,9 +234,12 @@ img {
     justify-content: center;
 }
 
+.welcome-wrapper img {
+    margin-right: 20px;
+}
+
 .welcome-text {
     font-size: 24px;
-    margin-right: 20px;
 }
 
 .editBtn {
