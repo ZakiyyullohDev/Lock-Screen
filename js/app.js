@@ -10,6 +10,7 @@ const randomIndex = Math.floor(Math.random() * bgImages.length)
 const passwordInput = document.getElementById('passwordInput')
 const inputsWrapper = document.getElementById('inputsWrapper')
 const lockScreenBtn = document.getElementById('lockScreenBtn')
+const openingSound = document.getElementById('openingSound')
 const unlockScreen = document.getElementById('unlockScreen')
 const userWrapper = document.getElementById('userWrapper')
 const timeWrapper = document.getElementById('timeWrapper')
@@ -97,6 +98,7 @@ unlockScreenBtn.addEventListener('click', ()=> {
         welcomeWrapper.style.display = 'flex'
         passwordWrapper.style.display = 'none'
         passwordInput.value = ''
+        openingSound.play()
         
         setTimeout(() => {
             userInfo.style.display = 'none'
@@ -128,6 +130,7 @@ lockScreenBtn.addEventListener('click', () => {
     unlockScreen.style.display = 'flex'
     inputsWrapper.style.display = 'flex'
     passwordWrapper.style.display = 'flex'
+    secretPasswordText.style.display = 'flex'
     weatherInfoWrapper.style.display = 'none'
     
     body.style.backgroundImage = `url('${bgImagesBlurred[randomIndex]}')`
@@ -148,6 +151,7 @@ passwordInput.addEventListener('keydown', (e)=> {
             inputsWrapper.style.display = "none"
             welcomeWrapper.style.display = "flex"
             
+            openingSound.play()
             passwordInput.value = ''
             
             setTimeout(() => {
@@ -156,6 +160,7 @@ passwordInput.addEventListener('keydown', (e)=> {
                 unlockScreen.style.display = "none"
                 welcomeWrapper.style.display = "none"
                 passwordWrapper.style.display = "none"
+                secretPasswordText.style.display = 'none'
                 weatherInfoWrapper.style.display = 'flex'
                 document.body.style.backgroundImage = `url('${bgImages[randomIndex]}')`
             }, 3000)
