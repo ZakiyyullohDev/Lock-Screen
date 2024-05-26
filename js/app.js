@@ -33,38 +33,38 @@ let date = new Date()
 
 const apiKey =  '913dfb1df5fd26ad1747ebdad2f4c841'
 
-async function fetchWeatherByLocation() {
+async function fetchWeather() {
     try {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(async position => {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${apiKey}`);
-                const data = await response.json();
-                console.log(latitude);
-                console.log(longitude);
-            });
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
+        // const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${'Kokand'}&appid=${apiKey}`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=kokand&appid=${apiKey}`)
+        const data = await response.json()
+        const cityName = data.name;// thi is city name info
+        const cloud = data.weather[0].main;// this is weather cloud info
+        const temp = `${Math.round(data.main.feels_like)}°C`;// this is weather temp info
+        const windSpeed =`${Math.round(data.wind.speed)} km/h`;// this is wind speed info
+        const humidity =`Humidity ${Math.round(data.main.humidity)}%`;// this is weather humidity info
+        windSpeedHtml.textContent = windSpeed
+        cloudInfoHtml.textContent = cloud
+        humidityHtml.textContent = humidity
+        cityNameHtml.textContent = cityName
+        cityTempHtml.textContent = temp
+        
     } catch (error) {
-        console.error(error);
+        console.error(error)
     }
 }
 
-fetchWeatherByLocation();
+fetchWeather()
 
-
-const test = ()=> {
-    if (localStorage.getItem('UserName:') && localStorage.getItem('Password:')) {
-        userName.textContent = localStorage.getItem('UserName:')
-        secretPasswordText.textContent = localStorage.getItem('Password:')
-        return ''
+const test = () => {
+    if (!localStorage.getItem('UserName:') || !localStorage.getItem('Password:')) {
+        localStorage.setItem('UserName:', 'ZakiyDev')
+        localStorage.setItem('Password:', '1571515z')
     }
-    localStorage.setItem('UserName:', 'ZakiyDev')
-    localStorage.setItem('Password:', '1571515z')
 }
 test()
+
+// console.log(localStorage.getItem('UserName:'))
 
 
 window.addEventListener('DOMContentLoaded', () => {
