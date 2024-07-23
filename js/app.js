@@ -1,6 +1,6 @@
-const bgImagesBlurred = ['/img/bg1blurred.jpg','/img/bg2blurred.jpg','/img/bg3blurred.jpg','/img/bg4blurred.jpg']
+const bgImagesBlurred = ['/img/bg1blurred.jpg','/img/bg2blurred.jpg','/img/bg3blurred.jpg','/img/bg4blurred.jpg', '/img/bg5blurred.jpg']
+const bgImages = ['/img/bg1.jpg', '/img/bg2.jpg','/img/bg3.jpg','/img/bg4.jpg', '/img/bg5.jpg']
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const bgImages = ['/img/bg1.jpg', '/img/bg2.jpg','/img/bg3.jpg','/img/bg4.jpg']
 const secretPasswordText = document.getElementById('secretPasswordText')
 const weatherInfoWrapper = document.getElementById('weatherInfoWrapper')
 const unlockScreenBtn = document.getElementById('unlockScreenBtn')
@@ -98,6 +98,7 @@ unlockScreenBtn.addEventListener('click', ()=> {
         passwordWrapper.style.display = 'none'
         passwordInput.value = ''
         openingSound.play()
+        window.location.href = 'https://classic.minecraft.net/?join=lRyrkOSCMBuQHX2a'
         
         setTimeout(() => {
             userInfo.style.display = 'none'
@@ -152,6 +153,7 @@ passwordInput.addEventListener('keydown', (e)=> {
             
             openingSound.play()
             passwordInput.value = ''
+            window.location.href = 'https://classic.minecraft.net/?join=lRyrkOSCMBuQHX2a'
             
             setTimeout(() => {
                 userInfo.style.display = "none"
@@ -186,14 +188,19 @@ const editPassword = () => {
     secretPasswordText.addEventListener('click', () => {
         secretPasswordText.setAttribute('contenteditable', 'true')
     })
-    secretPasswordText.addEventListener('keydown', (e)=> {
-        if (e.key === 'Enter') {
-            secretPasswordText.setAttribute('contenteditable', 'false')
-            userPasswordArray.push(secretPasswordText.textContent)
-            console.log(userPasswordArray)
-            setPasswordToStorage()
-        }
-    })
+    if (secretPasswordText.value == '') {
+        alert("Iltimos Password Kiriting")
+        return '';
+    } else {
+        secretPasswordText.addEventListener('keydown', (e)=> {
+            if (e.key === 'Enter') {
+                secretPasswordText.setAttribute('contenteditable', 'false')
+                userPasswordArray.push(secretPasswordText.textContent)
+                console.log(userPasswordArray)
+                setPasswordToStorage()
+            }
+        })
+    }
 }
 
 editUserName()
