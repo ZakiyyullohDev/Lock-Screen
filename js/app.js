@@ -98,7 +98,7 @@ unlockScreenBtn.addEventListener('click', ()=> {
         passwordWrapper.style.display = 'none'
         passwordInput.value = ''
         openingSound.play()
-        window.location.href = 'https://classic.minecraft.net/?join=lRyrkOSCMBuQHX2a'
+        window.location.href = 'https://windows-10-orcin.vercel.app/'
         
         setTimeout(() => {
             userInfo.style.display = 'none'
@@ -153,7 +153,7 @@ passwordInput.addEventListener('keydown', (e)=> {
             
             openingSound.play()
             passwordInput.value = ''
-            window.location.href = 'https://classic.minecraft.net/?join=lRyrkOSCMBuQHX2a'
+            window.location.href = 'https://windows-10-orcin.vercel.app/'
             
             setTimeout(() => {
                 userInfo.style.display = "none"
